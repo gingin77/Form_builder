@@ -126,7 +126,7 @@ let select = document.createElement( "select");
 // give it an id attribute called 'newSelElement'
 select.name = "language";
 select.id = "language";
-select.placeholder = "Select Language";
+// select.placeholder = "Select Language";
 
 // create some content for the new element.
 for (let i=0; i < formData[4].options.length; i++){
@@ -148,22 +148,19 @@ let parentDiv = language.parentNode;
 
 parentDiv.replaceChild(select, language);
 
+// Now fix the type text area element.
+// <textarea name="bio" id="bio" cols="45" rows="10"></textarea>
 
-//target the element I want to replace
+let textarea = document.createElement( "textarea");
+textarea.name = "Your Comment";
+textarea.id = "user-comment";
+textarea.cols = "45";
+textarea.rows = "10";
 
+let comment = document.getElementById("user-comment");
+let parentDiv2 = comment.parentNode;
 
-
+parentDiv2.replaceChild(textarea, comment);
 
 
 // console.log (language);
-
-
-// <form action="" method="">
-//     <label for="car">Car:</label>
-//     <select name="car" id="car">
-//         <option value="volvo">Volvo</option>
-//         <option value="saab">Saab</option>
-//         <option value="mercedes">Mercedes</option>
-//         <option value="audi">Audi</option>
-//     </select>
-// </form>
