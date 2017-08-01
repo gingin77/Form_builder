@@ -6,10 +6,10 @@ let formData = [
 
   { // added <input>
     "type": "text", // not yet used
-    "label": "First Name",
-    "id": "user-first-name",
-    "icon": "fa-user",
-    "options": []
+    "label": "First Name", //set with createTextNode
+    "id": "user-first-name", // set with setAttribute
+    "icon": "fa-user", // save for later
+    "options": [] // save for later
   },
   {
     "type": "text",
@@ -104,31 +104,19 @@ let formData = [
 
 let fields = document.getElementById( "fields" );
 
-for (let i=0; i < formData.length; i==) {
+for (let i=0; i < formData.length; i++){
 
   let label = document.createElement( "label");
   let input = document.createElement( "input" );
 
-  let liH2Text = document.createTextNode( portfolioData[ i ].h2 );
+  let labelText = document.createTextNode( formData[ i ].label);
 
+  label.appendChild(labelText);
 
+  input.setAttribute( "type", formData[ i ].type ); //appends to input; built in?
 
-
-  // let li       = document.createElement( "li" ); DONE
-  // let liImg    = document.createElement( "img" ); DONE
-  //
-  // let liH2     = document.createElement( "h2" ); NA
-  // let liH2Text = document.createTextNode( portfolioData[ i ].h2 );
-  //
-  // liH2.appendChild( liH2Text );
-  //
-  // liImg.setAttribute( "src", portfolioData[ i ].img );
-  //
-  // li.appendChild( liImg );
-  // li.appendChild( liH2 );
-  //
-  // portfolioList.appendChild( li );
-
+  fields.appendChild(label);
+  fields.appendChild(input);
 }
 
-formData = a loop that iterates through the array formData
+// formData = a loop that iterates through the array formData
