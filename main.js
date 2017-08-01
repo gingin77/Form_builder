@@ -5,8 +5,8 @@ let formData = [
   // compare the input in the HTML file with the contents of this first object
 
   { // added <input>
-    "type": "text", // not yet used
-    "label": "First Name", //set with createTextNode
+    "type": "text", // set with setAttribute
+    "label": "First Name", //set with setAttribute
     "id": "user-first-name", // set with setAttribute
     "icon": "fa-user", // save for later
     "options": [] // save for later
@@ -106,16 +106,12 @@ let fields = document.getElementById( "fields" );
 
 for (let i=0; i < formData.length; i++){
 
-  let label = document.createElement( "label");
   let input = document.createElement( "input" );
 
-  let labelText = document.createTextNode( formData[ i ].label);
+  input.setAttribute( "type", formData[ i ].type );
+  input.setAttribute( "id", formData[ i ].id );
+  input.setAttribute( "label", formData[ i ].label );
 
-  label.appendChild(labelText);
-
-  input.setAttribute( "type", formData[ i ].type ); //appends to input; built in?
-
-  fields.appendChild(label);
   fields.appendChild(input);
 }
 
