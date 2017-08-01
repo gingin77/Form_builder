@@ -102,6 +102,7 @@ let formData = [
 
 // <input type="text" id="user-first-name" placeholder="First Name">
 
+
 let fields = document.getElementById( "fields" );
 
 for (let i=0; i < formData.length; i++){
@@ -114,5 +115,55 @@ for (let i=0; i < formData.length; i++){
 
   fields.appendChild(input);
 }
+// ^^ Sets first 4 input boxes.
 
-// let language = document.getElementById("user-language");
+// Next, setup the dropdown select menu
+
+
+//create empty element node
+let select = document.createElement( "select");
+
+// give it an id attribute called 'newSelElement'
+select.name = "language";
+select.id = "language";
+select.placeholder = "Select Language";
+
+// create some content for the new element.
+for (let i=0; i < formData[4].options.length; i++){
+
+  let dropdown = document.createElement( "option");
+  let dropdownText = document.createTextNode( formData[4].options[i].label );
+
+  dropdown.appendChild( dropdownText );
+
+  dropdown.setAttribute( "value", formData[4].options[i].value );
+
+  // apply that content to the new element
+  select.appendChild( dropdown );
+}
+
+// build a reference to the existing node to be replaced
+let language = document.getElementById("user-language");
+let parentDiv = language.parentNode;
+
+parentDiv.replaceChild(select, language);
+
+
+//target the element I want to replace
+
+
+
+
+
+// console.log (language);
+
+
+// <form action="" method="">
+//     <label for="car">Car:</label>
+//     <select name="car" id="car">
+//         <option value="volvo">Volvo</option>
+//         <option value="saab">Saab</option>
+//         <option value="mercedes">Mercedes</option>
+//         <option value="audi">Audi</option>
+//     </select>
+// </form>
