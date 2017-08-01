@@ -34,7 +34,7 @@ let formData = [
   },
   {
     "type": "select",
-    "label": "Select Language",
+    "label": "Select Language",//**************
     "id": "user-language",
     "icon": "",
     "options": [
@@ -110,9 +110,9 @@ for (let i=0; i < formData.length; i++){
 
   input.setAttribute( "type", formData[ i ].type );
   input.setAttribute( "id", formData[ i ].id );
-  input.setAttribute( "label", formData[ i ].label );
+  input.setAttribute( "placeholder", formData[ i ].label );
 
   fields.appendChild(input);
 }
 
-// formData = a loop that iterates through the array formData
+// let language = document.getElementById("user-language");
